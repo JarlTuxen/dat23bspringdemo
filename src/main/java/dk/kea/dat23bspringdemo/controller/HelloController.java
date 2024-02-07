@@ -20,5 +20,6 @@ public class HelloController {
     @GetMapping("/parameter")
     public String parameter(@RequestParam String inddata){
         return inddata + " er dagens tekst!";
+
     }
 }
