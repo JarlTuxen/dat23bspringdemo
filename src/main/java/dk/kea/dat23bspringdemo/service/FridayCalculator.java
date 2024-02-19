@@ -1,7 +1,10 @@
 package dk.kea.dat23bspringdemo.service;
 
+import org.springframework.stereotype.Service;
+
 import java.time.LocalDate;
 
+@Service
 public class FridayCalculator {
 
     //FridayCalculator branch

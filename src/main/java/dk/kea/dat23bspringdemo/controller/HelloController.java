@@ -8,6 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
+    private FridayCalculator fridayCalculator;
+
+    public HelloController(FridayCalculator fridayCalculator){
+        this.fridayCalculator = fridayCalculator;
+    }
+
     @GetMapping("/")
     public String rootMapping(){
         return "Root page!";
@@ -25,13 +31,13 @@ public class HelloController {
 
     @GetMapping("/erdetfredag")
     public String erdetfredag(){
-        FridayCalculator fridayCalculator = new FridayCalculator();
+        //FridayCalculator fridayCalculator = new FridayCalculator();
         return fridayCalculator.erdetfredag();
     }
 
     @GetMapping("/erdetx")
-    public String erDetX(@RequestParam int dag){
-        FridayCalculator fridayCalculator = new FridayCalculator();
+    public String erDetX(@RequestParam("day") int dag){
+        //FridayCalculator fridayCalculator = new FridayCalculator();
         return fridayCalculator.erDetX(dag);
     }
 
